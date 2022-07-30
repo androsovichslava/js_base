@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        ul {
+            font-size: 20px;
+        }
+        div {
+            font-size: large;
+        }
+        .bg-red {
+            background-color: red;
+        }
+        .bg-blue {
+            background-color: blue;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div>Столица Украины</div>
+    <ul>
+        <li>Париж</li>
+        <li>Москва</li>
+        <li data-q="1">Киев</li>
+        <li>Лондон</li>
+        <li>Лиссабон</li>
+    </ul>
+
+    <script>
+        document.querySelector('ul').onclick=event=> {
+            event.stopPropagation();
+            const li = event.target;
+            if( li.nodeName !== 'LI') return;
+            console.log(li);
+            if (li.getAttribute("data-q")==="1") {
+                    li.classList.add("bg-blue")
+            } else {
+                li.classList.add("bg-red")
+            }
+        };
+
+    </script>
+</body>
+</html>
